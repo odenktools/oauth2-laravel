@@ -1,0 +1,6 @@
+[submodule "packages/odenktools/api-consumer"]
+	path = packages/odenktools/api-consumer
+	url = https://github.com/odenktools/laravel-api-consumer.git
+[submodule "packages/odenktools/heimdal"]
+	path = packages/odenktools/heimdal
+	url = https://github.com/odenktools/heimdal.git

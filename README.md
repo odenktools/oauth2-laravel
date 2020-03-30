@@ -4,6 +4,15 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ## Learning Oauth2
 
+#### INSTALL
+
+```bash
+cp .env.example .env
+php artisan migrate --seed
+php artisan passport:client --password
+php artisan passport:client --client
+```
+
 #### OAUTH2 AUTHORIZATION GRANTS
 
 - Client Credentials (https://tools.ietf.org/html/rfc6749#section-1.3.4)

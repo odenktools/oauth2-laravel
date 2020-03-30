@@ -11,6 +11,7 @@
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
+        "laravel/passport": "^8.4",
         "laravel/tinker": "^2.0"
     },
     "require-dev": {
@@ -32,7 +33,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Optimus\\ApiConsumer\\" : "packages/odenktools/api-consumer/src/",
+            "Optimus\\Heimdal\\" : "packages/odenktools/heimdal/src/"
         },
         "classmap": [
             "database/seeds",

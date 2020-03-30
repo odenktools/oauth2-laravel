@@ -35,7 +35,7 @@ php artisan serve
 ```
 
 ```
-Yey! Your Application run at http://localhost:8080
+Yey! Your Application run at http://localhost:8000
 ```
 
 #### OAUTH2 AUTHORIZATION GRANTS

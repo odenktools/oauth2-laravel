@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Company;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -37,6 +38,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function companies()
+    {
+        return $this->belongsTo(Company::class, 'company_id', 'id');
+    }
+
+    public function hasAnyCompany()
+    {
+        $data = $this->companies->first();
+
+        if ($data === null) {
+            return false;
+        }
+
+        return true;
+    }
 
     /**
      * Validate the password of the user for the Passport password grant.

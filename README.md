@@ -15,9 +15,9 @@ php artisan passport:client --client
 
 #### OAUTH2 AUTHORIZATION GRANTS
 
-- Client Credentials (https://tools.ietf.org/html/rfc6749#section-1.3.4)
+- [Client Credentials](https://tools.ietf.org/html/rfc6749#section-1.3.4)
 
-- Resource Owner Password Credentials (https://tools.ietf.org/html/rfc6749#section-1.3.3)
+- [Resource Owner Password Credentials](https://tools.ietf.org/html/rfc6749#section-1.3.3)
 
 ## License
 

@@ -6,11 +6,36 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 #### INSTALL
 
+```
+cd /var/www/
+git clone https://github.com/odenktools/oauth2-laravel.git
+cd oauth2-laravel
+git submodule update --init
+```
+
 ```bash
 cp .env.example .env
+```
+
+```
+CHANGE YOUR DATABASE CONNECTION at .env file
+
+CREATE DATABASE NAME laravel_oauth
+```
+
+```bash
 php artisan migrate --seed
 php artisan passport:client --password
 php artisan passport:client --client
+php artisan vendor:publish --provider="Optimus\Heimdal\Provider\LaravelServiceProvider"
+```
+
+```bash
+php artisan serve
+```
+
+```
+Yey! Your Application run at http://localhost:8080
 ```
 
 #### OAUTH2 AUTHORIZATION GRANTS

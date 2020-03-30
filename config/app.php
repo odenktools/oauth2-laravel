@@ -165,6 +165,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Optimus\ApiConsumer\Provider\LaravelServiceProvider::class,
+        Optimus\Heimdal\Provider\LaravelServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -174,7 +176,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
     ],
 
     /*
@@ -226,6 +227,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /*
+         * Facade Providers...
+         */
+        'ApiConsumer' => Optimus\ApiConsumer\Facade\ApiConsumer::class,
     ],
 
 ];

@@ -10,7 +10,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 cd /var/www/
 git clone https://github.com/odenktools/oauth2-laravel.git
 cd oauth2-laravel
-git submodule update --init
+git submodule update --init --recursive
 ```
 
 ```bash

@@ -36,16 +36,18 @@ class OauthProxy
 
     /**
      * @param $email
+     * @param $clientId
+     * @param $tokenUrl
      * @param $password
      * @return array
      * @throws InvalidCredentialsException
      */
-    public function attemptLogin($email, $clientId, $tokenUrl, $password)
+    public function attemptLogin($clientId, $email, $tokenUrl, $password)
     {
         $user = $this->userRepository->where('email', $email)->first();
 
         if (!is_null($user)) {
-            return $this->proxy('password', $clientId, $tokenUrl [
+            return $this->proxy('password', $clientId, $tokenUrl, [
                 'username' => $email,
                 'password' => $password
             ]);
@@ -58,10 +60,8 @@ class OauthProxy
      * Attempt to refresh the access token used a refresh token that
      * has been saved in a cookie
      */
-    public function attemptRefresh($clientId, $tokenUrl)
+    public function attemptRefresh($clientId, $tokenUrl, $refreshToken)
     {
-        $refreshToken = $this->request->cookie(self::REFRESH_TOKEN);
-
         return $this->proxy('refresh_token', $clientId, $tokenUrl, [
             'refresh_token' => $refreshToken
         ]);
@@ -80,7 +80,8 @@ class OauthProxy
             ->first();
 
         if (is_null($oauth)) {
-            throw new InvalidCredentialsException();
+            //throw new InvalidCredentialsException();
+            throw new \Exception();
         }
 
         $data = array_merge($data, [
@@ -92,7 +93,8 @@ class OauthProxy
         $response = ApiConsumer::post($tokenUrl, $data);
 
         if (!$response->isSuccessful()) {
-            throw new InvalidCredentialsException();
+            //throw new InvalidCredentialsException();
+            throw new \Exception();
         }
 
         $data = json_decode($response->getContent());
@@ -110,6 +112,7 @@ class OauthProxy
 
         return [
             'access_token' => $data->access_token,
+            'refresh_token' => $data->refresh_token,
             'expires_in' => $data->expires_in
         ];
     }

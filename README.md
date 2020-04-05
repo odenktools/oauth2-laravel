@@ -38,6 +38,12 @@ php artisan serve
 Yey! Your Application run at http://localhost:8000
 ```
 
+
+```sql
+TRUNCATE TABLE oauth_refresh_tokens;
+TRUNCATE TABLE oauth_access_tokens;
+```
+
 #### OAUTH2 AUTHORIZATION GRANTS
 
 - [Client Credentials](https://tools.ietf.org/html/rfc6749#section-1.3.4)

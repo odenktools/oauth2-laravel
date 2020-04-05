@@ -36,8 +36,9 @@ class ApiLoginController extends Controller
         $clientId = $request->get('client_id');
         $email = $request->get('email');
         $password = $request->get('password');
+
         try {
-            $tokenUrl = '/oauth/token';
+            $tokenUrl = env('OAUTH2_URL_TOKEN');
             return response()->json($this->loginProxy->attemptLogin($clientId, $email, $tokenUrl, $password));
         } catch (InvalidCredentialsException $e) {
             Log::error($e->getMessage());
@@ -59,7 +60,7 @@ class ApiLoginController extends Controller
         }
         $clientId = $request->get('client_id');
         $refreshToken = $request->get('refresh_token');
-        $tokenUrl = '/oauth/token';
+        $tokenUrl = env('OAUTH2_URL_TOKEN');
         return response()->json($this->loginProxy->attemptRefresh($clientId, $tokenUrl, $refreshToken));
     }
 

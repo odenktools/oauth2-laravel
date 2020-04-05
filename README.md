@@ -54,14 +54,13 @@ Yey! Your Application run at http://localhost:8000
 #### LOGIN
 
 ```bash
-curl --location -X POST 'http://localhost:8000/api/login' -H 'Content-Type: application/x-www-form-urlencoded' -d 'client_id=1&email=odenktools@gmail.com&password=qwerty&scope=all'
+curl --location -X POST 'http://localhost:8000/api/login' -H 'Accept: application/json' -H 'Content-Type: application/x-www-form-urlencoded' -d 'client_id=1&email=odenktools@gmail.com&password=qwerty&scope=all'
 ```
 
 #### ACCESS
 
-
 ```bash
-curl --location -X GET 'http://localhost:8000/api/check-oauth-passwd' -H 'Authorization: Bearer YOUR_ACCESS_TOKEN_HERE'
+curl --location -X GET 'http://localhost:8000/api/check-oauth-passwd' -H 'Accept: application/json' -H 'Authorization: Bearer YOUR_ACCESS_TOKEN_HERE'
 ```
 
 **result**
@@ -77,7 +76,7 @@ curl --location -X GET 'http://localhost:8000/api/check-oauth-passwd' -H 'Author
 **example**
 
 ```bash
-curl --location -X GET 'http://localhost:8000/api/check-oauth-passwd' -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmYwNTkwYmNhNGE1M2Y4OTYxZDc4MTgzZTJkZjk0YmFkM2U3ZWY1OGI0Y2M2MWE4OWVlMGI4YWRiYzUxN2IyYzk4NjI0MTA1MmU3NDI0OTYiLCJpYXQiOjE1ODYwNzU4NjksIm5iZiI6MTU4NjA3NTg2OSwiZXhwIjoxNjE3NjExODY5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.SyAmzuNB6fR8hgvRnXMl4CQ_GY0asHbqL6DrfuC6cByFCGVYJZOItS5Zl5LnszWTCgepmL7sK5-OsjQI1xhn7jD4TbFO5JsuAydDUfc3IU_0DHOxWZQxCNz840l8sgvLzpgPXOeYoFfaEQcft-qFzCx8yzm2Ol8WZDRXkuLYpJ31R9i9R_eM1dHYr1Vm0qoxLMYmqYSPzTIWPSGPgTrEU9KkveErCqWUIyxjdu_Tk-sJIux-J2XahwZfuGOWxcKzeGfmRoepL-U3SZCAusTESyox3It-aErJMbZCPIlxbl22rzgeA8roJVcFr5EG49gDuylCZtyckxpLiAru6uECRHEnxA3vxhwfXujljfV9thbYoWl7mj7j2RwGQu8jqo3Oki81ZtIPhucJ28d8uOsGqVCd6ZzU6FWVAz_Z9hk_IFf8UaMq6w0zMAT_WwZ8JYlWu18ADTLKfmtey05aGHG3G0bEC0OYycTcwNFyn5L6VgjMvsciwHlN1BL7GrmM77f4shluLQQzqodeF2bOf3JZ8-WXjS0SMr_NhkNXKc9gYwbn0QS0yzgSj8G1iWlNYhCXoFk8gmOk44uGTyEU-s3Q5Wg8cjoNDqOWJmPutFcXfEGhXUHsjPplh7EzbnwIc2qsVgf2zh-vYnzYnV4PMnqwF482lD7VNgH8EybN9cNQtKQ'
+curl --location -X GET 'http://localhost:8000/api/check-oauth-passwd' -H 'Accept: application/json' -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmYwNTkwYmNhNGE1M2Y4OTYxZDc4MTgzZTJkZjk0YmFkM2U3ZWY1OGI0Y2M2MWE4OWVlMGI4YWRiYzUxN2IyYzk4NjI0MTA1MmU3NDI0OTYiLCJpYXQiOjE1ODYwNzU4NjksIm5iZiI6MTU4NjA3NTg2OSwiZXhwIjoxNjE3NjExODY5LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.SyAmzuNB6fR8hgvRnXMl4CQ_GY0asHbqL6DrfuC6cByFCGVYJZOItS5Zl5LnszWTCgepmL7sK5-OsjQI1xhn7jD4TbFO5JsuAydDUfc3IU_0DHOxWZQxCNz840l8sgvLzpgPXOeYoFfaEQcft-qFzCx8yzm2Ol8WZDRXkuLYpJ31R9i9R_eM1dHYr1Vm0qoxLMYmqYSPzTIWPSGPgTrEU9KkveErCqWUIyxjdu_Tk-sJIux-J2XahwZfuGOWxcKzeGfmRoepL-U3SZCAusTESyox3It-aErJMbZCPIlxbl22rzgeA8roJVcFr5EG49gDuylCZtyckxpLiAru6uECRHEnxA3vxhwfXujljfV9thbYoWl7mj7j2RwGQu8jqo3Oki81ZtIPhucJ28d8uOsGqVCd6ZzU6FWVAz_Z9hk_IFf8UaMq6w0zMAT_WwZ8JYlWu18ADTLKfmtey05aGHG3G0bEC0OYycTcwNFyn5L6VgjMvsciwHlN1BL7GrmM77f4shluLQQzqodeF2bOf3JZ8-WXjS0SMr_NhkNXKc9gYwbn0QS0yzgSj8G1iWlNYhCXoFk8gmOk44uGTyEU-s3Q5Wg8cjoNDqOWJmPutFcXfEGhXUHsjPplh7EzbnwIc2qsVgf2zh-vYnzYnV4PMnqwF482lD7VNgH8EybN9cNQtKQ'
 ```
 
 **result**
@@ -93,7 +92,6 @@ curl --location -X GET 'http://localhost:8000/api/check-oauth-passwd' -H 'Author
     "updated_at": "2020-04-05 06:21:54"
 }
 ```
-
 
 #### CLEANUP TOKEN
 

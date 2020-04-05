@@ -66,6 +66,8 @@ class Kernel extends HttpKernel
         'oauth-client' => \Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
         'scopes' => \Laravel\Passport\Http\Middleware\CheckScopes::class,
         'scope' => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
+
+        'cors' => \Fruitcake\Cors\HandleCors::class,
     ];
 
     /**

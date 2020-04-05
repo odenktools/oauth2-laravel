@@ -167,6 +167,7 @@ return [
          */
         Optimus\ApiConsumer\Provider\LaravelServiceProvider::class,
         Optimus\Heimdal\Provider\LaravelServiceProvider::class,
+        Fruitcake\Cors\CorsServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Exceptions\InvalidCredentialsException;
 use App\Libraries\OauthProxy;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -40,7 +39,7 @@ class ApiLoginController extends Controller
         try {
             $tokenUrl = env('OAUTH2_URL_TOKEN');
             return response()->json($this->loginProxy->attemptLogin($clientId, $email, $tokenUrl, $password));
-        } catch (InvalidCredentialsException $e) {
+        } catch (\Exception $e) {
             Log::error($e->getMessage());
         }
     }

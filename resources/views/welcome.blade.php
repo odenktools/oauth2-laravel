@@ -67,7 +67,7 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    <a href="https://github.com/odenktools/oauth2-laravel">GitHub</a>
+                    <a href="https://github.com/odenktools/oauth2-laravel" target="_blank">GitHub</a>
                     @auth
                         <a href="{{ route('user.profile') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -92,7 +92,7 @@
                 <div class="links">
                     <a href="{{ url('/register') }}">Register</a>
                     <a href="{{ url('/login') }}">Login</a>
-                    <a href="https://github.com/odenktools/oauth2-laravel">GitHub</a>
+                    <a href="https://github.com/odenktools/oauth2-laravel" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>

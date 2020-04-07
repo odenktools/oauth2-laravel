@@ -69,10 +69,14 @@
                 <div class="top-right links">
                     <a href="https://github.com/odenktools/oauth2-laravel">GitHub</a>
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('user.profile') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                        <a href="{{ url('/logout') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Logout <span class="caret"></span>
+                        </a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif

@@ -52,8 +52,7 @@ class OauthProxy
                 'password' => $password
             ]);
         }
-
-        throw new InvalidCredentialsException();
+        throw new \Exception('Login not valid.');
     }
 
     /**
@@ -71,7 +70,7 @@ class OauthProxy
      * @param $grantType
      * @param array $data
      * @return array
-     * @throws InvalidCredentialsException
+     * @throws \Exception
      */
     public function proxy($grantType, $clientId, $tokenUrl, array $data = [])
     {
@@ -80,7 +79,6 @@ class OauthProxy
             ->first();
 
         if (is_null($oauth)) {
-            //throw new InvalidCredentialsException();
             throw new \Exception();
         }
 
@@ -93,7 +91,6 @@ class OauthProxy
         $response = ApiConsumer::post($tokenUrl, $data);
 
         if (!$response->isSuccessful()) {
-            //throw new InvalidCredentialsException();
             throw new \Exception();
         }
 

@@ -10,6 +10,20 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
+                        <div class="form-group{{ $errors->has('app_id') ? ' has-error' : '' }}">
+                            <label for="app_id" class="col-md-4 control-label">Application ID</label>
+
+                            <div class="col-md-6">
+                                <input id="app_id" class="form-control" name="app_id" value="{{ old('app_id') }}">
+
+                                @if ($errors->has('app_id'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('app_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 

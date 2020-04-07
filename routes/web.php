@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('welcome');
 });
+
+Route::get('/user/profile', 'AppAuthController@webShowPasswordCredentials')
+    ->name('user.profile')
+    ->middleware(['auth:web']);
+
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
